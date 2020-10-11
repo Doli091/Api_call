@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Employee
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addItem()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
   </ion-toolbar>
+  
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-button ion-button (click)="getData()"> Get Employee Data</ion-button>
+  
+  <!-- <ion-row>ID: {{result.id}} </ion-row> -->
+  
+  <ion-list>
+    <ion-item ng-repeat="result in result.result" >
+      
+      <h2>
+        {{result.id}}
+        {{result.title}}
+      </h2>
+     
+    </ion-item>
+  </ion-list>
 </ion-content>
